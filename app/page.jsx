@@ -8,7 +8,7 @@ const Home = () => {
         <br className="max-md:hidden"/> <span className="orange_gradient">AI-Powered Prompts</span>
       </h1>
       <p className="desc text-center">
-        Prompt Hub is an open-sourced AI propmting hub for users to discover, create and share creative prompts
+        Prompt Hub is an open-sourced AI prompting hub for users to discover, create and share creative prompts.
       </p>
 
       <Feed />

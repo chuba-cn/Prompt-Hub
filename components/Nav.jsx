@@ -57,7 +57,7 @@ const Nav = () => {
             </Link>
           </div>
         ) : (
-          <>
+          <div className="flex items-center justify-center gap-3">
             {providers &&
               Object.values(providers).map((provider) => (
                 <button
@@ -66,10 +66,10 @@ const Nav = () => {
                   onClick={() => signIn(provider.id)}
                   className="black_btn"
                 >
-                  Sign In
+                  Sign In with {`${provider.name}`}
                 </button>
               ))}
-          </>
+          </div>
         )}
       </div>
 
