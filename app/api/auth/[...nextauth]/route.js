@@ -11,7 +11,7 @@ const handler = NextAuth({
             clientId: process.env.GOOGLE_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
             httpOptions:{
-                timeout: 30000
+                timeout: 60000
             }
         }),
 
@@ -19,10 +19,12 @@ const handler = NextAuth({
             clientId: process.env.GITHUB_ID,
             clientSecret: process.env.GITHUB_CLIENT_SECRET,
             httpOptions:{
-                timeout: 30000
+                timeout: 60000
             }
         })
     ],
+
+    secret: process.env.NEXTAUTH_SECRET,
 
     callbacks:{
         async session({ session }){
@@ -54,7 +56,6 @@ const handler = NextAuth({
                 }
                 return true;
             } catch(error){
-                console.log(error);
                 return false;
             }
         }
