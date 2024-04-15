@@ -28,7 +28,7 @@ const Feed = () => {
   const filterPrompts = (searchquery) => {
     const regex = new RegExp(searchquery, 'i'); // 'i' flag for case-insensitive search
     return posts.filter((post) => {
-      return regex.test(post.creator.username) ||
+      return regex.test(post.creator?.username) ||
              regex.test(post.tag) ||
              regex.test(post.prompt);
     });
@@ -60,8 +60,9 @@ const Feed = () => {
 
     setPosts(data);
   };
+
   useEffect(() => {
-    fetchPosts()
+    fetchPosts();
   }, [])
 
   return (
