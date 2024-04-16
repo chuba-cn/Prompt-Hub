@@ -9,7 +9,7 @@ export const GET = async (request, { params }) => {
             creator: params.id
         }).populate('creator');
 
-        return new Response(JSON.stringify(prompts), {staus: 200});
+        return new Response(JSON.stringify(prompts), { staus: 200 });
 
     } catch (error) {
         return new Response('Failed to fecth all prompts', {status: 500});
